@@ -1,0 +1,60 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+    dedupe: ['react', 'react-dom', '@emotion/react', '@emotion/styled', '@mui/material'],
+  },
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'react-router-dom',
+      '@mui/material',
+      '@mui/icons-material',
+      '@mui/icons-material/AccountTree',
+      '@mui/icons-material/Analytics',
+      '@mui/icons-material/AssignmentLate',
+      '@mui/icons-material/BugReport',
+      '@mui/icons-material/Build',
+      '@mui/icons-material/CheckCircle',
+      '@mui/icons-material/CloudUpload',
+      '@mui/icons-material/Code',
+      '@mui/icons-material/CodeOff',
+      '@mui/icons-material/ContentCopy',
+      '@mui/icons-material/Dashboard',
+      '@mui/icons-material/ErrorOutline',
+      '@mui/icons-material/Folder',
+      '@mui/icons-material/FolderOpen',
+      '@mui/icons-material/History',
+      '@mui/icons-material/Hub',
+      '@mui/icons-material/Info',
+      '@mui/icons-material/LocalHospital',
+      '@mui/icons-material/PlayArrow',
+      '@mui/icons-material/RestartAlt',
+      '@mui/icons-material/Settings',
+      '@mui/icons-material/Speed',
+      '@mui/icons-material/Timeline',
+      '@mui/icons-material/Warning',
+      '@emotion/react',
+      '@emotion/styled',
+      '@tanstack/react-query',
+      'react-hot-toast',
+      'recharts',
+      'cytoscape',
+      'react-cytoscapejs',
+    ],
+  },
+  root: path.resolve(__dirname, '.'),
+  publicDir: 'public',
+  server: {
+    host: '0.0.0.0',
+    port: 3000,
+    allowedHosts: true,
+  },
+})
